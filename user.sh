@@ -19,7 +19,8 @@ echo -e "\e[36m>>>>>>>> Download Dependencies <<<<<<<<\e[0m"
 npm install
 
 echo -e "\e[36m>>>>>>>> Copy User.service file <<<<<<<<\e[0m"
-cp /home/centos/Roboshop-shell/user.service /etc/systemd/system/user.service
+## cp /home/centos/Roboshop-shell/user.service /etc/systemd/system/user.service
+cp user.service /etc/systemd/system/user.service
 
 echo -e "\e[36m>>>>>>>> Load User Service <<<<<<<<\e[0m"
 systemctl daemon-reload
