@@ -22,7 +22,7 @@ echo -e "\e[36m>>>>>>>> Install NodeJS Dependencies <<<<<<<<\e[0m"
 npm install
 
 echo -e "\e[36m>>>>>>>> Unzip App Content <<<<<<<<\e[0m"
-cp /home/centos/Roboshop-shell/cart.service /etc/systemd/system/cart.service
+cp /root/Roboshop-shell/cart.service /etc/systemd/system/cart.service
 
 echo -e "\e[36m>>>>>>>> Start Cart Service <<<<<<<<\e[0m"
 systemctl daemon-reload
