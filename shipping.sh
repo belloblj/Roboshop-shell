@@ -1,4 +1,3 @@
-script_path=$(dirname $0)
 source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>> Install Maven <<<<<<<<\e[0m"
@@ -23,7 +22,7 @@ mvn clean package
 mv target/shipping-1.0.jar shipping.jar
 
 echo -e "\e[36m>>>>>>>> Copy and SetUp Shipping.service file into SystemD <<<<<<<<\e[0m"
-cp /root/Roboshop-shell/shipping.service /etc/systemd/system/shipping.service
+cp ${script_path}/shipping.service /etc/systemd/system/shipping.service
 
 
 echo -e "\e[36m>>>>>>>> Install MySQL Client <<<<<<<<\e[0m"

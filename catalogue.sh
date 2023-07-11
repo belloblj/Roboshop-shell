@@ -1,4 +1,3 @@
-script_path=$(dirname $0)
 source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>> Download NodeJS Setup <<<<<<<<\e[0m"
@@ -32,7 +31,7 @@ systemctl enable catalogue
 systemctl restart catalogue
 
 echo -e "\e[36m>>>>>>>> Copy MongoDB repo <<<<<<<<\e[0m"
-cp /home/centos/Roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[36m>>>>>>>> Install MongoDB Client <<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
