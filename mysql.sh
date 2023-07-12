@@ -1,3 +1,5 @@
+script=$(realpath "$0")
+script_path=$(dirname "$script")
 source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>> CentOS-8 Comes with MySQL 8 Version by default,  our application needs MySQL 5.7. So lets disable MySQL 8 version <<<<<<<<\e[0m"
