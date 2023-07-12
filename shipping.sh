@@ -1,6 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+mysql_root_password=$1
 
 echo -e "\e[36m>>>>>>>> Install Maven <<<<<<<<\e[0m"
 yum install maven -y
@@ -31,7 +32,7 @@ echo -e "\e[36m>>>>>>>> Install MySQL Client <<<<<<<<\e[0m"
 yum install mysql -y
 
 echo -e "\e[36m>>>>>>>> Load Schema <<<<<<<<\e[0m"
-mysql -h mysql.robobello.shop -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql.robobello.shop -uroot -p${mysql_root_password} < /app/schema/shipping.sql
 
 echo -e "\e[36m>>>>>>>> Restart Shipping Service <<<<<<<<\e[0m"
 systemctl daemon-reload

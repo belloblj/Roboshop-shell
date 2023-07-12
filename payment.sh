@@ -1,6 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
+rabbitmq_appuser_password=$1
 
 echo -e "\e[36m>>>>>>>> Install Python 3.6 <<<<<<<<\e[0m"
 yum install python36 gcc python3-devel -y
@@ -20,6 +21,7 @@ cd /app
 unzip /tmp/payment.zip
 
 echo -e "\e[36m>>>>>>>> Download Dependencies <<<<<<<<\e[0m"
+sed -i -e "s/rabbitmq_appuser_password|${rabbitmq_appuser_password}|" ${script_path}/paymen.service
 pip3.6 install -r requirements.txt
 
 echo -e "\e[36m>>>>>>>> Copy Payment service files <<<<<<<<\e[0m"
