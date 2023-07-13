@@ -22,3 +22,25 @@
     sed -i -e '10s|bin|BIN|g' passwd
 
 #### Instead of | we can use /, ?, :, ;, #, @
+
+# Functions
+    A name given to a set of commands is called a function.
+
+### Declare a function
+    function_name() {
+        echo Hello World
+    }
+    
+### Call function
+    function_name
+
+#### We can send inputs to the function and we can assess them with special variables $1-$n, $*, $#
+
+    function_name() {
+        echo First Argument = $1
+        echo Second Argument = $2
+        echo All Arguments = $*
+        echo No of Arguments = $#
+    }
+
+    function_name1 123 xyz
