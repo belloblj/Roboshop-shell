@@ -44,3 +44,12 @@
     }
 
     function_name1 123 xyz
+
+## Redirectors command  (>, <, &>/dev/null)
+        >file # this will overwrite the content
+        >>file # this will append to the content
+        &>>file # this will append output and error to the file
+
+    &>/dev/null #this is used in a case we do not need any kind 
+    of output or error to a file for future reference, 
+    we try to nullify the output with the help of /dev/null
