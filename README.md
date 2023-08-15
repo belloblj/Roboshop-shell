@@ -1,59 +1,50 @@
 # Roboshop-shell
 This project is built with docs from
-https://github.com/learndevopsonline/learndevopsonline
+#### https://github.com/learndevopsonline/learndevopsonline
 
-https://learndevopsonline.github.io/learndevopsonline/build/docs/RoboShop-Project/catalogue/
+#### https://learndevopsonline.github.io/learndevopsonline/build/docs/RoboShop-Project/catalogue/
 
-### SED Command Options
+The project is based on Shell Scripting hence the name Roboshop-shell.
 
-# Delete some lines
-    - based on line numbers
-        sed -i -e '1d' passwd
-    - string based delete
-        sed -i -e '/nologin/ d' passwd
+#### IDE used: IntelliJ IDEA Community version
+#### Linux Username & Password : centos / DevOps321
+#### Linux Version: CentOS8
+#### Cloud Service: AWS EC2 Free tier
 
-# Add some lines
-    - sed -i -e '1 a Hello' -e '/mongod/ a Hello World' passwd
-# Modify some lines
-    sed -i -e '2 cHello Universe' -e '/centos/ c Hello Galaxy' passwd
+# Project Overview
+This is an e-commerce webp service used to shop for robots.
+The project is built on DevOps and Agile principles with the use of microservices approach.
 
+Project is having the following components / microservices.
+#### Frontend
+    Static landing page
 
-# Delete some word
-    sed -i -e 's|Hello||g' passwd
+#### MongoDB
+    Database management of choice
 
-# Modify (substitute) some words
-    sed -i -e 's|bin|BIN|g' passwd
-    sed -i -e '10s|bin|BIN|g' passwd
+#### Catalogue
+    Serving the list of items that displays in roboshop application (NodeJS is used here)
 
-#### Instead of | we can use /, ?, :, ;, #, @
+#### Redis
+    For in-memory data storage(Caching) and allows users to access the data of database over API.
 
-# Functions
-    A name given to a set of commands is called a function.
+#### User
+    User Logins and Registrations Service (NodeJS is used here)
 
-### Declare a function
-    function_name() {
-        echo Hello World
-    }
-    
-### Call function
-    function_name
+#### Cart
+    Shopping Cart service is also managed with the use of NodeJS
 
-#### We can send inputs to the function and we can assess them with special variables $1-$n, $*, $#
+#### MySQL
+    Database management
 
-    function_name() {
-        echo First Argument = $1
-        echo Second Argument = $2
-        echo All Arguments = $*
-        echo No of Arguments = $#
-    }
+#### Shipping
+    - For finding the distance of the package to be shipped and calculate the price based on that.Shipping service is written in Java
 
-    function_name1 123 xyz
+#### RabbitMQ 
+    - a messaging Queue which is used by some components of the applications.
 
-## Redirectors command  (>, <, &>/dev/null)
-        >file # this will overwrite the content
-        >>file # this will append to the content
-        &>>file # this will append output and error to the file
+#### Payment 
+    - for payments in RoboShop e-commerce app. This service is written on Python 3.6
 
-    &>/dev/null #this is used in a case we do not need any kind 
-    of output or error to a file for future reference, 
-    we try to nullify the output with the help of /dev/null
+#### Dispatch
+    - the service which dispatches the product after purchase. It is written in GoLang.
