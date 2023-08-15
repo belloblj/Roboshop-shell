@@ -1,4 +1,8 @@
 # Roboshop-shell
+This project is built with docs from
+https://github.com/learndevopsonline/learndevopsonline
+
+https://learndevopsonline.github.io/learndevopsonline/build/docs/RoboShop-Project/catalogue/
 
 ### SED Command Options
 
